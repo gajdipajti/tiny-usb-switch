@@ -1,5 +1,3 @@
-#include <tinysnore.h>
-
 /*
   A Tiny USB switch with ATTinyx5.
   ATTinyx5 core for Arduino IDE integration: https://github.com/SpenceKonde/ATTinyCore
@@ -42,7 +40,7 @@ void setup() {
 void resetUSB(int dt) {
   digitalWrite(usbPWR, true);
   Serial.println('0');
-  snore(dt);
+  delay(dt);
   digitalWrite(usbPWR, false);
   Serial.println('1');
 }
@@ -75,7 +73,5 @@ if (Serial.available()) {
       Serial.println("ERR");
       break;
     } 
-  } else {
-    snore(5000);
   }
 }
